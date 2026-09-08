@@ -1,0 +1,13 @@
+.pdf*
+.png*
+.jpg*
+.jpeg* 
+
+
+
+backend/__pycache__
+backend/uploads
+model/__pycache__
+ResearchPapers_MajorProject
+Major_Project.pdf
+images
