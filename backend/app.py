@@ -34,7 +34,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 #         shutil.copyfileobj(file.file, buffer)
     
 #     video_tensor = get_video_tensor(video_path)
-#     captions = model1.generate_caption(video_tensor)
+#     captions = model1_inference.generate_caption(video_tensor)
 
 #     return {
 #         "filename": file.filename,
@@ -53,7 +53,7 @@ async def generate_caption(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
     
     video_tensor = get_video_tensor(video_path)
-    captions = model2.generate_caption(video_tensor)
+    captions = model2_inference.generate_caption(video_tensor)
 
     return {
         "filename": file.filename,
@@ -74,7 +74,7 @@ async def generate_caption(file: UploadFile = File(...)):
 #         shutil.copyfileobj(file.file, buffer)
     
 #     video_tensor = get_video_tensor(video_path)
-#     captions = model3.generate_caption(video_tensor)
+#     captions = model3_inference.generate_caption(video_tensor)
 
 #     return {
 #         "filename": file.filename,
