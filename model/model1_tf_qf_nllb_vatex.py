@@ -68,7 +68,7 @@ class QFormerBlock(nn.Module):
 
 
 
-class VideoCaptioningModel(nn.Module):
+class VideoCaptioningModel1(nn.Module):
     def __init__(
         self,
         timesformer_model_name="facebook/timesformer-base-finetuned-k600",
@@ -236,14 +236,13 @@ class VideoCaptioningModel(nn.Module):
 
 
 
+# model1_train = VideoCaptioningModel1()
 
 
 
 
 
-
-
-class VideoCaptionModel:
+class VideoCaptionModel1:
     def __init__(self):
         
 
@@ -251,7 +250,7 @@ class VideoCaptionModel:
         
         # Model Loading
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = VideoCaptioningModel()
+        self.model = VideoCaptioningModel1()
         self.model.load_state_dict(self.checkpoint)
         self.model.to(self.device)
         self.model.eval()
@@ -281,4 +280,4 @@ class VideoCaptionModel:
 
 
 
-# model1 = VideoCaptionModel()
+# model1_inference = VideoCaptionModel1()

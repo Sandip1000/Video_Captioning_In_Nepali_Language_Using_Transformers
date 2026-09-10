@@ -61,7 +61,7 @@ class QFormerBlock(nn.Module):
 
 
 # Video Captioning Model with Q-Former Bridge
-class VideoCaptioningModel(nn.Module):
+class VideoCaptioningModel2(nn.Module):
     def __init__(
         self,
         timesformer_model_name="facebook/timesformer-base-finetuned-k600",
@@ -200,15 +200,15 @@ class VideoCaptioningModel(nn.Module):
         return generated_ids
     
 
+model2_train = VideoCaptioningModel2()
 
 
-
-class VideoCaptionModel:
+class VideoCaptionModel2:
     def __init__(self):
         self.checkpoint = load_file(fr"D:\Model_for_DEMO\tf_qf_mbart_vatex\checkpoint-8000\model.safetensors")
         # Model Loading
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = VideoCaptioningModel()
+        self.model = VideoCaptioningModel2()
         self.model.load_state_dict(self.checkpoint)
         self.model.to(self.device)
         self.model.eval()
@@ -236,4 +236,4 @@ class VideoCaptionModel:
 
         return captions
 
-model2 = VideoCaptionModel()
+model2_inference = VideoCaptionModel2()
